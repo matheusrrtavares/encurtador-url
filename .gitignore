@@ -1,0 +1,19 @@
+# IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+
+# Build & Logs
+target/
+**/target/
+*.log
+
+# Docker & Ambientes
+.env
+*.env
+
+# Arquivos temporários do OS
+Thumbs.db
+.DS_Store

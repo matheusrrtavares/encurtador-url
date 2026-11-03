@@ -12,12 +12,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
-import java.security.PrivilegedAction;
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-
-import static org.springframework.web.servlet.function.ServerResponse.ok;
 
 @RestController
 public class UrlController {
@@ -31,7 +27,7 @@ public class UrlController {
 
     @PostMapping(value = "/shorten-url")
     public ResponseEntity<ShortenUrlResponse> shortenUrl(@RequestBody ShortenUrlRequest request,
-                                           HttpServletRequest serveletRequest) {
+                                                         HttpServletRequest serveletRequest) {
 
         String id = "";
         do {
@@ -46,11 +42,11 @@ public class UrlController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Void> redirect (@PathVariable("id") String id){
+    public ResponseEntity<Void> redirect(@PathVariable("id") String id) {
 
         var url = urlRepository.findById(id);
 
-        if(url.isEmpty()){
+        if (url.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
 
