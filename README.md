@@ -165,12 +165,6 @@ cd ../encurtadorurl
 ./mvnw clean spring-boot:run
 ```
 
----
-
-## 👨‍💻 Autor
-
-Desenvolvido por **Matheus Rodrigues Rocha Tavares**  
-*Backend Java Developer | Software Engineering B.S.*  
+--- 
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheusrrtavares)
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/matheusrrtavares)
