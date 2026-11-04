@@ -33,7 +33,11 @@
 
 Sistemas encurtadores de URL exigem **baixa latência de leitura** (no momento do redirecionamento `GET /{id}`) e gerenciamento eficiente de ciclo de vida para milhões de links temporários:
 
+<<<<<<< HEAD
 1. **Busca Direta por Chave Primária (`_id`):** O código alfanumérico gerado (de 5 a 10 caracteres) é armazenado diretamente como a chave primária (`@Id`) do documento na coleção `urls`, garantindo buscas em complexidade `O(1)` / `O(log N)` via índice B-Tree nativo sem necessidade de *joins*.
+=======
+1. **Busca Direta por Chave Primária (`_id`):** O código alfanumérico gerado (de 5 a 10 caracteres) é armazenado diretamente como a chave primária (`@Id`) do documento na coleção `urls`, garantindo buscas em complexidade $O(1)$ / $O(\log N)$ via índice B-Tree nativo sem necessidade de *joins*.
+>>>>>>> ddff00a (README e .env.example)
 2. **Expurgo Automático no SGBD (`TTL Index`):** Em vez de sobrecarregar a aplicação Java com *Cron Jobs* varrendo tabelas para deletar links vencidos, utilizamos `@Indexed(expireAfter = "0s")` combinado com `java.time.Instant` (padrão UTC). A própria *background thread* do MongoDB remove os documentos assim que o instante de expiração é atingido.
 3. **Preparação para a Fase 2 (Analytics):** A modelagem orientada a documentos facilita a evolução do schema para armazenar eventos e métricas de cliques de alta vazão sem bloqueios transacionais pesados.
 
@@ -166,5 +170,14 @@ cd ../encurtadorurl
 ```
 
 --- 
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheusrrtavares)
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Matheus Rodrigues Rocha Tavares**  
+*Backend Java Developer | Software Engineering B.S.*  
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheusrrtavares)
