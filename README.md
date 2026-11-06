@@ -7,7 +7,7 @@
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.x-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Spring Data MongoDB](https://img.shields.io/badge/Spring_Data-MongoDB-4EA94B?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-data-mongodb)
 [![MongoDB](https://img.shields.io/badge/MongoDB-NoSQL-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-[![Docker](https://img.shields.io/badge/Docker-Hub_%26_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/matheusrodrigues2007/encurtador-url-public-api)
+[![Docker](https://img.shields.io/badge/Docker-Hub_%26_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)]
 [![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-2ea44f?style=for-the-badge)](#)
 
 <p align="center">
