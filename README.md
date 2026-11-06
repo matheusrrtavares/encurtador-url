@@ -306,11 +306,6 @@ npx ngrok http 8080
 ```
 Basta usar a URL HTTPS gerada pelo Ngrok (ex.: `https://xxxx.ngrok-free.app/shorten-url`) para encurtar o link e abri-lo diretamente no celular!
 
----
-
-## 👨‍💻 Autor
-
-Desenvolvido por **Matheus Rodrigues Rocha Tavares**  
-*Backend Java Developer | Software Engineering B.S.*  
+--- ---
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheusrrtavares)
