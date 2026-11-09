@@ -2,7 +2,7 @@ package matheusrrt.encurtadorurl.dto;
 
 import java.time.Instant;
 
-public record ClickEventRequest(
+public record ClickEvent(
         String urlId,
         Instant clickedAt,
         String ipAddres,

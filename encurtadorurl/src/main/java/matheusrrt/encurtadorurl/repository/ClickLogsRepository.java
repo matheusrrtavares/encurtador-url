@@ -1,4 +1,7 @@
 package matheusrrt.encurtadorurl.repository;
 
-public interface ClickLogsRepository {
+import matheusrrt.encurtadorurl.entities.ClickLogsEntity;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface ClickLogsRepository extends MongoRepository<ClickLogsEntity, String> {
 }
