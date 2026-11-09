@@ -7,12 +7,7 @@
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.x-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Spring Data MongoDB](https://img.shields.io/badge/Spring_Data-MongoDB-4EA94B?style=for-the-badge&logo=spring&logoColor=white)](https://spring.io/projects/spring-data-mongodb)
 [![MongoDB](https://img.shields.io/badge/MongoDB-NoSQL-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
-<<<<<<< HEAD
 [![Docker](https://img.shields.io/badge/Docker-Hub_%26_Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/matheusrodrigues2007/encurtador-url-public-api)
-=======
-[![Docker](https://img.shields.io/badge/Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://hub.docker.com/r/matheusrodrigues2007/encurtador-url-public-api)
->>>>>>> 5d27ce4e477d945542ed607f09de56bb5445528d
-[![Status](https://img.shields.io/badge/Status-Conclu%C3%ADdo-2ea44f?style=for-the-badge)](#)
 
 <p align="center">
   <b>Serviço RESTful de encurtamento, redirecionamento de URLs e telemetria assíncrona de cliques construído com Java 21 e Spring Boot. Utiliza geração de identificadores alfanuméricos únicos com verificação de colisão, expiração nativa no banco de dados via índices TTL (Time-To-Live) do MongoDB em UTC, processamento de eventos em background com <code>ThreadPoolTaskExecutor</code> e infraestrutura 100% conteinerizada no Docker Hub e Docker Compose.</b>
@@ -256,7 +251,6 @@ docker compose up -d
 Verifique se os containers estão em execução e saudáveis:
 ```bash
 docker compose ps
-<<<<<<< HEAD
 ```
 * **`mongodb-encurtador`:** Rodando na porta `27017` com persistência no volume `mongodb_data`.
 * **`encurtador-api`:** Rodando na porta `8080` (inicia automaticamente após o MongoDB passar no `healthcheck`).
@@ -310,62 +304,7 @@ Caso queira testar acessos vindos do seu celular ou compartilhar o link com outr
 npx ngrok http 8080
 ```
 Basta usar a URL HTTPS gerada pelo Ngrok (ex.: `https://xxxx.ngrok-free.app/shorten-url`) para encurtar o link e abri-lo diretamente no celular!
-=======
-```
-* **`mongodb-encurtador`:** Rodando na porta `27017` com persistência no volume `mongodb_data`.
-* **`encurtador-api`:** Rodando na porta `8080` (inicia automaticamente após o MongoDB passar no `healthcheck`).
->>>>>>> 5d27ce4e477d945542ed607f09de56bb5445528d
 
 ---
-
-### Opção 2: Modo de Desenvolvimento (MongoDB no Docker + API via Maven/IDE)
-Se você quiser modificar o código-fonte ou depurar pela sua IDE:
-
-1. **Suba apenas o container do banco de dados MongoDB:**
-   ```bash
-   cd docker
-   docker compose up -d mongodb
-   ```
-2. **Execute a aplicação Spring Boot localmente (Java 21):**
-   Defina as variáveis de ambiente `MONGO_USERNAME=admin` e `MONGO_PASSWORD=admin123` no terminal ou na configuração de execução da sua IDE e rode:
-   ```bash
-   cd ../encurtadorurl
-   ./mvnw clean spring-boot:run
-   ```
-
----
-
-### 🛠️ Testando na Prática (cURL, Navegador e Ngrok)
-
-#### 1. Criar um link encurtado via terminal (`cURL`)
-```bash
-curl -X POST http://localhost:8080/shorten-url \
-  -H "Content-Type: application/json" \
-  -d '{"url": "https://github.com/matheusrrtavares"}'
-```
-**Resposta esperada:**
-```json
-{"url":"http://localhost:8080/aB3x9Z"}
-```
-
-#### 2. Testar o redirecionamento e registrar o clique
-Abra a URL retornada (`http://localhost:8080/aB3x9Z`) no seu navegador ou execute:
-```bash
-curl -i http://localhost:8080/aB3x9Z
-```
-
-#### 3. Consultar os cliques registrados diretamente no MongoDB
-```bash
-docker exec -it mongodb-encurtador mongosh -u admin -p admin123 --authenticationDatabase admin --eval "use encurtadorurl; db.click_logs.find().pretty()"
-```
-
-#### 4. (Opcional) Expor com Ngrok para testar pelo seu Smartphone
-Caso queira testar acessos vindos do seu celular ou compartilhar o link com outros dispositivos:
-```bash
-npx ngrok http 8080
-```
-Basta usar a URL HTTPS gerada pelo Ngrok (ex.: `https://xxxx.ngrok-free.app/shorten-url`) para encurtar o link e abri-lo diretamente no celular!
-
---- ---
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/matheusrrtavares)
